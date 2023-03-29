@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 import pytz
-import time
 from pymongo import MongoClient
 import speedtest
 from dotenv import load_dotenv
