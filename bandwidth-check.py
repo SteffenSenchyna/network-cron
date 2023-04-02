@@ -7,7 +7,7 @@ import speedtest
 from dotenv import load_dotenv
 load_dotenv()
 url = os.environ["MONGOURL"]
-client = MongoClient(f'mongodb://{url}:27017/')
+client = MongoClient(f'mongodb://{url}/')
 networkDB = client.network
 bandwidthTable = networkDB.bandwidth
 speed_test = speedtest.Speedtest()

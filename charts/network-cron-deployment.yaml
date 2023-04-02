@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: network-cron-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: network-cron
+  template:
+    metadata:
+      labels:
+        app: network-cron
+    spec:
+      containers:
+        - name: network-cron
+          image: ssenchyna/network-cron:latest
+          envFrom:
+            - configMapRef:
+                name: network-cron-configmap
+            - secretRef:
+                name: network-cron-secret

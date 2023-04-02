@@ -11,12 +11,13 @@ def getScan():
     load_dotenv()
     discordURL = os.environ["DISCORDURL"]
     netboxURL = os.environ["NETBOXURL"]
-    url = f"http://{netboxURL}:8000/api/dcim/devices/"
+    NETBOXTOKEN = os.environ["NETBOXTOKEN"]
+    url = f"http://{netboxURL}/api/dcim/devices/"
     threads = []
     headers = {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': os.environ["NETBOXTOKEN"]
+        'Authorization': f"Token {NETBOXTOKEN}"
     }
 
     response = requests.get(url, headers=headers).json()
