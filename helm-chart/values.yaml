@@ -2,7 +2,7 @@
 # Declare variables to be passed into your templates.
 jobs:
 # third cron
-- name: network-cron
+- name: health
   image:
     repository: ssenchyna/network-cron
     tag: latest
