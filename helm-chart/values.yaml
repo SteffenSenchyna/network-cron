@@ -16,8 +16,6 @@ jobs:
   args:
   - "-c"
   - "./run.sh"
-  serviceAccount:
-    name: "network-serviceaccount"
   resources:
     limits:
       cpu: 50m
