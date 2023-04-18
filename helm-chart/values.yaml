@@ -6,7 +6,7 @@ jobs:
   image:
     repository: ssenchyna/network-cron
     tag: latest
-    imagePullPolicy: Always
+    imagePullPolicy: IfNotPresent
   # optional env vars
   env:
   - configMapRef:
