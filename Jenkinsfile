@@ -27,9 +27,9 @@ pipeline {
             sh """
             docker build -t ${env.DOCKER_REPO}/$SERVICE:$BUILD_TAG .
             docker push ${env.DOCKER_REPO}/$SERVICE:$BUILD_TAG
-            sed -i 's/version:.*/version: $HELM_TAG/' ./helm-chart/Chart.yaml
-            sed -i 's/appVersion:.*/appVersion: $BUILD_TAG/' ./helm-chart/Chart.yaml
-            helm package ./helm-chart
+            sed -i 's/version:.*/version: $HELM_TAG/' ./helm-cronjobs/Chart.yaml
+            sed -i 's/appVersion:.*/appVersion: $BUILD_TAG/' ./helm-cronjobs/Chart.yaml
+            helm package ./helm-cronjobs
             """
         }
     }

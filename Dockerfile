@@ -5,5 +5,3 @@ WORKDIR /app
 COPY . /app
 RUN chmod a+x run.sh
 RUN pip install -r requirements.txt 
-
-CMD [ "./run.sh" ]
