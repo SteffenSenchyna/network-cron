@@ -1,0 +1,32 @@
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+jobs:
+# third cron
+- name: network-cron
+  image:
+    repository: ssenchyna/network-cron
+    tag: latest
+    imagePullPolicy: Always
+  # optional env vars
+  env:
+  - configMapRef:
+      name: default-config
+  schedule: "*/5 * * * *"
+  command: ["/bin/sh"]
+  args:
+  - "-c"
+  - "./run.sh"
+  serviceAccount:
+    name: "network-serviceaccount"
+  resources:
+    limits:
+      cpu: 50m
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 256Mi
+  failedJobsHistoryLimit: 1
+  successfulJobsHistoryLimit: 3
+  concurrencyPolicy: Forbid
+  restartPolicy: Never
+
