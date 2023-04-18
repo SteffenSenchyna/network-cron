@@ -8,7 +8,7 @@ jobs:
     tag: latest
     imagePullPolicy: IfNotPresent
   # optional env vars
-  env:
+  envFrom:
   - configMapRef:
       name: default-config
   schedule: "*/5 * * * *"
