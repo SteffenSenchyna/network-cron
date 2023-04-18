@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+data:
+  NETBOXTOKEN: 0123456789abcdef0123456789abcdef01234567
+  MONGOURL: 'mongo:27017'
+  NETBOXURL: 'netbox:8000'
+  DISCORDURL: >-
+    https://discord.com/api/webhooks/1097400808405995530/foB50-GQgB9B7MDu5ScSzMNX7ge7ZfzmqzsybBw04QSWd5zTu32LGjVNeo_amfYoOwcg

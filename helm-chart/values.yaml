@@ -1,0 +1,11 @@
+image:
+  repository: ssenchyna/network-cron
+  pullPolicy: Always
+
+cronjob:
+  name: network-cron
+  schedule: "*/10 * * * *"
+
+
+
+

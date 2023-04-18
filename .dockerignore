@@ -2,3 +2,5 @@
 .env
 charts/
 encode_env.sh
+helm-chart/
+docker-build.py
