@@ -12,7 +12,7 @@ def getScan():
     discordURL = os.environ["DISCORDURL"]
     netboxURL = os.environ["NETBOXURL"]
     NETBOXTOKEN = os.environ["NETBOXTOKEN"]
-    url = f"http://{netboxURL}/api/dcim/devices/"
+    url = f"http://{netboxURL}/api/dcim/devices/?site_id=4"
     threads = []
     headers = {
         'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ def getScan():
 
     def ping(ip, host, downHosts):
         result = subprocess.run(
-            ['ping', '-c', '1', ip], stdout=subprocess.DEVNULL)
+            ['ping', '-c', '1', "-W", "200", ip], stdout=subprocess.DEVNULL)
         if result.returncode == 0:
             host["ping_status"] = "up"
         else:

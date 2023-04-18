@@ -3,5 +3,6 @@ FROM python:3.9.2-alpine3.13
 RUN apk update && apk add bash
 WORKDIR /app
 COPY . /app
+COPY ./mibs/ /usr/local/lib/python3.9/site-packages/pysnmp/smi/mibs
 RUN chmod a+x run.sh
 RUN pip install -r requirements.txt 
