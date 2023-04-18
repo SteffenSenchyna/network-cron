@@ -11,7 +11,7 @@ jobs:
   envFrom:
   - configMapRef:
       name: default-config
-  schedule: "*/5 * * * *"
+  schedule: "*/1 * * * *"
   command: ["/bin/sh"]
   args:
   - "-c"
@@ -23,6 +23,8 @@ jobs:
     requests:
       cpu: 50m
       memory: 256Mi
+  serviceAccount:
+    name: "health"
   failedJobsHistoryLimit: 1
   successfulJobsHistoryLimit: 3
   concurrencyPolicy: Forbid
