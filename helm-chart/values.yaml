@@ -13,7 +13,7 @@ jobs:
   command: ["/bin/sh"]
   args:
   - "-c"
-  - "python health.py"
+  - "python /app/health.py"
   resources:
     limits:
       cpu: 50m
@@ -41,7 +41,7 @@ jobs:
   command: ["/bin/sh"]
   args:
   - "-c"
-  - "python bandwidth.py"
+  - "python /app/bandwidth.py"
   resources:
     limits:
       cpu: 50m
@@ -69,7 +69,7 @@ jobs:
   command: ["/bin/sh"]
   args:
   - "-c"
-  - "python interface.py"
+  - "python /app/interface.py"
   resources:
     limits:
       cpu: 50m
