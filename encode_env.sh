@@ -13,6 +13,9 @@ type: Opaque
 data:
 EOF
 
+
+
+
 while read -r line || [ -n "$line" ]; do
   if [ -n "$line" ]; then
     key=$(echo $line | cut -d'=' -f1)
