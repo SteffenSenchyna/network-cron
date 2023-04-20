@@ -1,8 +1,10 @@
 import os
 
 # Define the image name and tag
-image_name = 'ssenchyna/network-cron'
-image_tag = '2.0'
-
+image_name = 'network'
+image_tag = 'Test'
+os.system(f"docker image prune -y")
 os.system(
-    f'docker buildx build --platform linux/amd64,linux/arm64 -t {image_name} --push .')
+    f'docker build -t {image_name}:{image_tag} .')
+os.system(
+    f'docker run --rm -it --entrypoint /bin/sh {image_name}:{image_tag}')

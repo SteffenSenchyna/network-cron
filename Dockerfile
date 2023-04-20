@@ -8,3 +8,4 @@ COPY . /app
 COPY ./mibs/ /usr/local/lib/python3.9/site-packages/pysnmp/smi/mibs
 RUN chmod a+x *.sh
 RUN pip install -r requirements.txt 
+ENTRYPOINT ["/bin/sh"]
