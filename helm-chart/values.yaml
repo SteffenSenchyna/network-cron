@@ -54,7 +54,7 @@ jobs:
     name: "bandwidth"
   failedJobsHistoryLimit: 1
   successfulJobsHistoryLimit: 3
-  concurrencyPolicy: Allow
+  concurrencyPolicy: Forbid
   restartPolicy: Never
 
 - name: interface
