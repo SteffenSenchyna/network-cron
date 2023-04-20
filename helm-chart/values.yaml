@@ -10,7 +10,7 @@ jobs:
   envFrom:
   - configMapRef:
       name: default-config
-  schedule: "*/10 * * * *"
+  schedule: "*/1 * * * *"
   command: ["/bin/sh"]
   args:
   - "-c"

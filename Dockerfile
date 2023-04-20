@@ -12,3 +12,4 @@ COPY ./mibs/ /usr/local/lib/python3.9/site-packages/pysnmp/smi/mibs
 
 
 ENTRYPOINT ["/bin/sh"]
+
