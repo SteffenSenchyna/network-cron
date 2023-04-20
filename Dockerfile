@@ -6,9 +6,9 @@ RUN apk add gcc musl-dev && \
 
 COPY jobs   /app
 COPY requirements.txt /app
-COPY mibs /usr/local/lib/python3.9/site-packages/pysnmp/smi/mibs/
 WORKDIR /app
 RUN pip install -r requirements.txt 
+COPY ./mibs/ /usr/local/lib/python3.9/site-packages/pysnmp/smi/mibs
 
 
 ENTRYPOINT ["/bin/sh"]
