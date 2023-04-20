@@ -3,13 +3,12 @@ jobs:
 - name: health
   image:
     repository: ssenchyna/network-cron
-    tag: latest
     imagePullPolicy: Always
   # optional env vars
   envFrom:
   - configMapRef:
       name: default-config
-  schedule: "*/10 * * * *"
+  schedule: "*/1 * * * *"
   command: ["/bin/sh"]
   args:
   - "-c"
