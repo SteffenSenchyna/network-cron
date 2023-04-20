@@ -1,10 +1,11 @@
+image:
+  repository: ssenchyna/network-cron
+  imagePullPolicy: Always
+  tag: ""
+
 jobs:
 # health cron
 - name: health
-  image:
-    repository: ssenchyna/network-cron
-    imagePullPolicy: Always
-    tag: ""
   # optional env vars
   envFrom:
   - configMapRef:
