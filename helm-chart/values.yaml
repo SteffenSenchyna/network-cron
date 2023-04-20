@@ -3,7 +3,7 @@ jobs:
 - name: health
   image:
     repository: ssenchyna/network-cron
-    tag: ""
+    tag: "latest"
     imagePullPolicy: Always
   # optional env vars
   envFrom:
